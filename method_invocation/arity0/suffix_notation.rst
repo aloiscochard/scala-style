@@ -16,9 +16,11 @@ Scala's parser will assume that the suffix notation is actually infix and will
 (incorrectly) attempt to incorporate the contents of the following line into the
 suffix invocation::
     
-    names toList
-    val answer = 42        // will not compile!
-    
+    def function: String = {
+      names toList
+      "foo"        // will not compile!
+    }
+
 This style should only be used on methods with no side-effects, preferably ones
 which were declared without parentheses (see above).  The most common acceptable
 case for this syntax is as the last operation in a chain of infix method calls::
